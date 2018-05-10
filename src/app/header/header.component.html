@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>menu</mat-icon>
+         </button>
+         <div fxFlex fxLayoutAlign="center">
+           <h3>
+             Vitter-Folio
+           </h3>
+          </div>
+          <button 
+            mat-icon-button 
+            [routerLink]="'/Settings'">
+              <mat-icon>settings</mat-icon>
+           </button>
+    </mat-toolbar-row>   
+  </mat-toolbar>
+
+  <mat-menu #appMenu="matMenu">
+      <button 
+        mat-menu-item
+        [routerLink]="'/'"> Portfolio </button>
+      <button 
+        mat-menu-item
+        [routerLink]="'/Settings'"> Transactions </button>
+      <button 
+        mat-menu-item
+        [routerLink]="'/Settings'"> Reports </button>
+      <button 
+        mat-menu-item
+        [routerLink]="'/Settings'"> Settings </button>
+    </mat-menu>
+ 
