@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { TesterComponent } from './tester/tester.component';
 
 // Routing
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     SettingsComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    TesterComponent
   ],
   imports: [
     BrowserModule,
