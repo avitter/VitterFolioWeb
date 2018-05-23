@@ -1,19 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div fxLayout="column">
+<div fxLayout="column" style="height:100%">
   <vit-header></vit-header>
-    
-  <div fxLayout="row">
-    
+  <router-outlet></router-outlet>
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Asset">
+        <mat-option *ngFor="let asset of assets" [value]="asset.assetId">
+          {{ asset.symbol }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+  <app-map-legend [mapID]="mapID1"></app-map-legend>
+  <div class="mapContainer">
+      <app-esri-map
+      class="map"
+      mapID="map1"
+      [center]="mapViewProperties.center"
+      [basemap]="mapProperties.basemap"
+      [zoom]="mapViewProperties.zoom"
+      (mapLoaded)="mapLoadedEvent1($event)">
+    </app-esri-map>
+  </div>
+  <div class="mapContainer">
+      <app-esri-map
+      class="map"
+      mapID="map2"
+      [center]="mapViewProperties.center"
+      [basemap]="mapProperties.basemap"
+      [zoom]="mapViewProperties.zoom"
+      (mapLoaded)="mapLoadedEvent2($event)">
+    </app-esri-map>
+  </div>
+  <!-- <app-esri-map
+    fxLayout="column"
+    fxFlexFill
+    [center]="mapViewProperties.center"
+    [basemap]="mapProperties.basemap"
+    [zoom]="mapViewProperties.zoom"
+    (mapLoaded)="mapLoadedEvent($event)">
+  </app-esri-map> -->
 </div>
-<router-outlet></router-outlet>
-<mat-form-field>
-  <mat-select placeholder="Asset">
-    <mat-option *ngFor="let asset of assets" [value]="asset.assetId">
-      {{ asset.symbol }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<!-- <mat-checkbox color="primary">Test</mat-checkbox>
-<button mat-raised-button (click)="alert('test');" color="primary">Test</button> -->
+
+<!-- <div class="wrapper">
+  <div>A</div>
+  <div>B</div>
+</div> -->
 

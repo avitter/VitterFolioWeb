@@ -1,0 +1,15 @@
+{
+  "env": {
+    "name": "PROD"
+  },
+  "serviceURL": "http://localhost:64272/graphql",
+  "map": {
+    "mapProperties": {
+        "basemap": "dark-gray"
+    },
+    "mapViewProperties": {
+      "center": [-90,30],
+      "zoom": 8
+    }
+  }
+}
